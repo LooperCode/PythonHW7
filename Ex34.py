@@ -1,45 +1,9 @@
-def Count (text_insert):
-    global count
-    count = 1
-    for i in range(len(text_insert)):
-        if text_insert[i] == " ":
-            count += 1
-            
-    
-
-def printRes (res, count):
-    if len(res) % 2 != 0:
-        return print("Ритма нет")
-    elif len(res)  % 2 == 0:
-        return print("Ритм есть")
-    
-        
-
-vowels = ["а", "и", "о", "у", "ы", "э"]            
-text_insert = input("Введите текст: ")
-res = map(str, text_insert)
-res = filter(lambda x: x in vowels, res)
-res = list(map(lambda x: x, res))
-Count(text_insert)
-print(printRes(res, count))
-
-
-
-
-
-
-# Когда java головного мозга:
-'''def GetRhythm (text):
-    maxCount = 0
-    count = 0
-    vowels = ["а", "и", "о", "у", "ы", "э"]
-    i = 0; j = 0
-    while i < len(text[j]):
-        if text[j][i] in vowels:
-            count += 1
-            i+=1
-        i+=1    
-    maxCount = count
+def GetRhythm (text):                                   
+    vowels = ["а", "и", "о", "у", "ы", "э"]             #Комментарий в окне сдачи задания не актуален. Заккоментированный способ это который не получился,
+    count = map(str, text[0])                           # а первый основной, чуть допилил его.
+    count = filter(lambda x: x in vowels, count)        
+    count = list(map(lambda x: x, count))
+    maxCount = len(count); count = len(count)
     for i in range(1, len(text)):
         if maxCount != count:
             break
@@ -53,9 +17,32 @@ print(printRes(res, count))
         print("Ритма нет")
                          
             
+                                           
+    
           
 text = input("Введите текст: ").split(" ")
 GetRhythm(text)            
-            '''
 
-          
+
+
+'''def printRes (res):
+    if len(res) % 2 > 0:
+        return print("Ритма нет")
+    elif len(res)  % 2 == 0:
+        return print("Ритм есть")
+    
+        
+
+vowels = ["а", "и", "о", "у", "ы", "э"]            
+text_insert = input("Введите текст: ")
+res = map(str, text_insert)
+res = filter(lambda x: x in vowels, res)
+res = list(map(lambda x: x, res))
+print(printRes(res))'''
+
+
+
+
+
+
+
